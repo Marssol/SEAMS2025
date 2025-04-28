@@ -94,6 +94,14 @@
 		border-radius: 50%;
 		object-fit: cover;
 	  }
+	  /* ----- banner image (banderole) ----- */
+	.banner            { line-height: 0; }               /* removes gap below img */
+	.banner img        {
+	  display: block;                                    /* no inline gaps */
+	  height: 30vh;
+	  width: 100%;                                       /* span full page */
+	  height: auto;                                 /* tweak height */
+	}
   </style>
   <script>
     // Highlight nav link on scroll
@@ -112,8 +120,13 @@
 <body>
   <header>
     <h1>SEAMS 2026</h1>
-    <p>The 21st International Symposium on Software Engineering for Adaptive and Self-Managing Systems</p>
+    <p><b>The 21st International Symposium on Software Engineering for Adaptive and Self-Managing Systems</b></p>
   </header>
+  
+  <!-- banderole image -->
+  <div class="banner">
+    <img src="photos/banderole2.png" alt="Rio de Janeiro skyline banner">
+  </div>
 
   <nav>
     <ul>

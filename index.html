@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEAMS 2026 | Software Engineering for Adaptive &amp; Self‑Managing Systems</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #0066cc;
+      --bg-light: #fafafa;
+      --text-dark: #222;
+    }
+    *,*::before,*::after{box-sizing:border-box;}
+    body{
+      font-family:'Inter',sans-serif;
+      margin:0;
+      line-height:1.6;
+      color:var(--text-dark);
+      background-color:#ffffff;
+      scroll-behavior:smooth;
+    }
+    h1,h2,h3{font-family:'Lora',serif; margin-top:0;}
+    header{
+      text-align:center;
+      padding:2.5rem 1rem 1rem;
+    }
+    header h1{font-size:2.4rem;margin-bottom:.3rem;}
+    header p{margin:0; opacity:.75;}
+
+    /* Horizontal anchor nav */
+    nav{
+      background:var(--bg-light);
+      border-top:1px solid #e0e0e0;
+      border-bottom:1px solid #e0e0e0;
+    }
+    nav ul{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:1.5rem;
+      margin:0; padding:.8rem 1rem; list-style:none;
+    }
+    nav a{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:600;
+      position:relative;
+      padding-bottom:.2rem;
+    }
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0; bottom:0;
+      width:0; height:2px;
+      background:var(--accent);
+      transition:width .25s ease-in-out;
+    }
+    nav a:hover::after, nav a.active::after{width:100%;}
+
+    main{max-width:900px; margin:0 auto; padding:2rem 1rem;}
+    section{margin-bottom:3rem;}
+    section h2{font-size:1.8rem; margin-bottom:.75rem; color:var(--accent);} 
+
+    footer{
+      text-align:center;
+      padding:2rem 1rem 3rem; /* extra for skyline */
+      background:var(--bg-light) url('rio-border.png') bottom center repeat-x;
+      background-size:auto 110px; /* adjust skyline height */
+      font-size:.9rem;
+      color:#555;
+    }
+    /* Smooth anchor offset (for fixed nav height) */
+    :target::before{
+      content:"";
+      display:block;
+      height:70px; /* height of nav */
+      margin-top:-70px;
+    }
+  </style>
+  <script>
+    // Highlight nav link on scroll
+    document.addEventListener('DOMContentLoaded',()=>{
+      const links=[...document.querySelectorAll('nav a')];
+      const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+      window.addEventListener('scroll',()=>{
+        const pos=window.scrollY+80;
+        let idx=sections.findIndex((sec,i)=>pos>=sec.offsetTop && (i===sections.length-1||pos < sections[i+1].offsetTop));
+        links.forEach(l=>l.classList.remove('active'));
+        if(idx>=0) links[idx].classList.add('active');
+      },{passive:true});
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>SEAMS 2026</h1>
+    <p>The 21st International Symposium on Software Engineering for Adaptive and Self-Managing Systems</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#org">Organization</a></li>
+      <li><a href="#research">Topics of Interest</a></li>
+      <li><a href="#paper-types">Types of Papers</a></li>
+      <li><a href="#pc">Program Committee</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>Today we are building an exciting future in which autonomous vehicles navigate complex environments, smart cities help solve public problems and achieve a higher quality of life, and service robots support social care workers or perform tasks that are too dangerous for humans. However, these software-intensive systems must continuously preserve and optimize their operation in the presence of uncertain changes in their operating environment, resource variability, evolving user needs, attacks and faults. In addition, the complexity of these systems demands them to adapt and manage themselves autonomously.</p>
+
+	<p> SEAMS is a CORE-A ranked conference that applies software engineering methods, techniques, processes, and tools to support the construction of safe, performant, and cost-effective self-adaptive and autonomous systems that provide self-* properties like self-configuration, self-healing, self-optimization, and self-protection. The objective of SEAMS is to bring together researchers and practitioners from academia, industry, and government to investigate, discuss, examine, and advance the fundamental principles, state of the art, and the solutions addressing critical challenges of engineering self-adaptive and self-managing systems.</p>
+    </section>
+
+    <section id="venue">
+      <h2>Venue</h2>
+      <p>SEAMS 2026 will be co‑located with <em>ICSE 2026</em> in Rio de Janeiro, Brazil, and will be held April 13-14 2026.</p>
+    </section>
+
+    <section id="org">
+  <h2>Organization Committee</h2>
+  <ul>
+    <li><strong>General Chair:</strong> Andrea Zisman (The Open University, UK)</li>
+    <li><strong>Program Co-Chairs:</strong>  
+        Amel Bennaceur (The Open University, UK)<br>
+        and Eunsuk Kang (Carnegie Mellon University, USA)
+    </li>
+    <li><strong>Artifact Evaluation Co-Chairs:</strong>  
+        Nianyu Li (ZGC National Lab, China)<br>
+        and Paulo Maia (State Univ. of Ceara, Brazil)
+    </li>
+    <li><strong>Publicity &amp; Media Co-Chairs:</strong>  
+        Simos Gerasimou (University of York, UK)<br>
+        and Nicolas Boltz (Karlsruhe Inst. Tech., Germany)
+    </li>
+    <li><strong>Proceedings Chair:</strong> Diego Perez Palacin (Linnaeus University, Sweden)</li>
+    <li><strong>Journal First Chair:</strong> Raffaela Mirandola (Politecnico di Milano, Italy)</li>
+    <li><strong>MIP Award Chair:</strong> Bradley Schmerl (Carnegie Mellon University, USA)</li>
+  </ul>
+</section>
+
+    
+
+    <section id="research">
+      <h2>Topics of Interest</h2>
+      <p>We welcome research contributions to all topics related to engineering self-adaptive and self-managing systems, including:</p>
+      <ul>
+		  <li>Foundational concepts</li>
+		  <li>Self-* properties</li>
+		  <li>Uncertainty</li>
+		  <li>Runtime models and variability</li>
+		  <li>Mixed-initiative and human-in-the-loop/human-on-the-loop</li>
+		  <li>Ethical challenges</li>
+		  <li>Self-Adaptation</li>
+		  <li>Adaptation vs evolution</li>
+		  <li>AI and machine learning</li>
+		  <li>Automatic synthesis techniques</li>
+		  <li>Control theory</li>
+		  <li>Simulation and digital twins</li>
+		  <li>Human-centered software development</li>
+		  <li>Engineering activities</li>
+		  <li>Domain/environment analysis</li>
+		  <li>Requirements elicitation</li>
+		  <li>Security and privacy</li>
+		  <li>Architecture and design</li>
+		  <li>Testing and assurances</li>
+		  <li>Automated maintenance</li>
+		  <li>Systematic reuse</li>
+		  <li>Processes and methodologies</li>
+		  <li>Self-adaptation for software engineering</li>
+		  <li>Languages</li>
+		  <li>Formal notations for self-* properties</li>
+		  <li>Domain-specific languages</li>
+		</ul>
+		<p>Application areas and domains include but are not limited to Internet of Things, cyber-physical systems, cloud/fog/edge/mobile computing, bioengineering, robotics, smart environments, smart user interfaces, web/service-based applications, and automotive.</p>
+		
+		<section id="paper-types">
+  <h2>Types of Papers</h2>
+
+  <p>We solicit the following four types of papers:</p>
+
+  <ol>
+    <li>
+      <strong>Full research papers</strong>
+      <em>(10 pages of content + 2 pages of references)</em>:<br>
+      Papers offering novel and mature research contributions, as well as
+      experiences gained from applying or evaluating research results in
+      practice.
+    </li>
+
+    <li>
+      <strong>(New) Future of SAS papers</strong>
+      <em>(8 pages of content + 2 pages of references)</em>:<br>
+      Papers that reflect on past SEAMS research and/or present visionary,
+      disruptive, or thought-provoking ideas with the potential to create a
+      paradigm shift in SEAMS. Ambition and potential impact outweigh extensive
+      evaluation, though preliminary evidence or a well-reasoned argument is
+      strongly encouraged.
+    </li>
+
+    <li>
+      <strong>Short papers</strong>
+      <em>(6 pages of content + 1 page of references)</em>:<br>
+      Papers describing ongoing research or new ideas that do not yet include a
+      mature evaluation.
+    </li>
+
+    <li>
+      <strong>Community debate proposals</strong>
+      <em>(1-page proposal, optionally with a supporting video)</em>:<br>
+      Proposals that present a thought-provoking statement on a topic of broad
+      community interest. Statements should encourage positions for and against
+      them. Proposals (≤ 500 words) will be selected based on topic timeliness,
+      suitability for debate, and proposer qualifications.
+    </li>
+  </ol>
+
+  <p>
+    More details on how to submit papers to SEAMS 2026 is coming soon.
+    In addition to research papers, SEAMS encourages the submission of
+    <strong>artifacts</strong>, either associated with papers or as standalone
+    contributions. All artifacts should be submitted to the artifact track.
+  </p>
+</section>
+
+
+      <p><em>Full CFP, dates, and submission details coming soon.</em></p>
+    </section>
+    
+	<section id="dates">
+		<h2>Important dates</h2>
+      <p><em>Details coming soon.</em></p>
+	</section>
+    <section id="pc">
+      <h2>Program Committee</h2>
+      <p><em>Details coming soon.</em></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 SEAMS Conference · <a href="mailto:lina.marsso@polymtl.ca">Contact Us</a>
+  </footer>
+</body>
+</html>

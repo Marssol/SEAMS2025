@@ -78,6 +78,22 @@
       height:70px; /* height of nav */
       margin-top:-70px;
     }
+	  /* --- add once, anywhere after your main CSS --- */
+	  .members   { list-style: none; padding: 0; margin: 0; }
+	  .members > li { margin: 0 0 1.4rem; }
+	  
+	  /* people cards */
+	  .person {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		margin-top: .4rem;          /* a little space after the role label */
+	  }
+	  .person img {
+		width: 48px; height: 48px;
+		border-radius: 50%;
+		object-fit: cover;
+	  }
   </style>
   <script>
     // Highlight nav link on scroll
@@ -125,23 +141,79 @@
 
     <section id="org">
   <h2>Organization Committee</h2>
-  <ul>
-    <li><strong>General Chair:</strong> Andrea Zisman (The Open University, UK)</li>
-    <li><strong>Program Co-Chairs:</strong>  
-        Amel Bennaceur (The Open University, UK)<br>
-        and Eunsuk Kang (Carnegie Mellon University, USA)
+  <ul class="members">
+    
+    <!-- 1. Single-person role -->
+    <li>
+      <strong>General Chair</strong>
+      <div class="person">
+        <img src="photos/Andrea.png" alt="Andrea Zisman photo">
+        <span>Andrea Zisman (The Open University, UK)</span>
+      </div>
     </li>
-    <li><strong>Artifact Evaluation Co-Chairs:</strong>  
-        Nianyu Li (ZGC National Lab, China)<br>
-        and Paulo Maia (State Univ. of Ceara, Brazil)
+    
+    <!-- 2. Role with two people -->
+    <li>
+      <strong>Program Co-Chairs</strong>
+      <div class="person">
+        <img src="photos/Amel.jpg" alt="Amel Bennaceur photo">
+        <span>Amel Bennaceur (The Open University, UK)</span>
+      </div>
+      <div class="person">
+        <img src="photos/Eunsunk.png" alt="Eunsuk Kang photo">
+        <span>Eunsuk Kang (Carnegie Mellon University, USA)</span>
+      </div>
     </li>
-    <li><strong>Publicity &amp; Media Co-Chairs:</strong>  
-        Simos Gerasimou (University of York, UK)<br>
-        and Nicolas Boltz (Karlsruhe Inst. Tech., Germany)
+    
+    <!-- repeat the same pattern for the rest -->
+    <li>
+      <strong>Artifact Evaluation Co-Chairs</strong>
+      <div class="person">
+        <img src="photos/Andrea.png"  alt="Nianyu Li photo">
+        <span>Nianyu Li (ZGC National Lab, China)</span>
+      </div>
+      <div class="person">
+        <img src="photos/paul.jpg"  alt="Paulo Maia photo">
+        <span>Paulo Maia (State Univ. Ceara, Brazil)</span>
+      </div>
     </li>
-    <li><strong>Proceedings Chair:</strong> Diego Perez Palacin (Linnaeus University, Sweden)</li>
-    <li><strong>Journal First Chair:</strong> Raffaela Mirandola (Politecnico di Milano, Italy)</li>
-    <li><strong>MIP Award Chair:</strong> Bradley Schmerl (Carnegie Mellon University, USA)</li>
+
+    <li>
+      <strong>Publicity &amp; Media Co-Chairs</strong>
+      <div class="person">
+        <img src="photos/Simos.jpg" alt="Simos Gerasimou photo">
+        <span>Simos Gerasimou (University of York, UK)</span>
+      </div>
+      <div class="person">
+        <img src="photos/Nicolas.jpg" alt="Nicolas Boltz photo">
+        <span>Nicolas Boltz (KIT, Germany)</span>
+      </div>
+    </li>
+
+    <li>
+      <strong>Proceedings Chair</strong>
+      <div class="person">
+        <img src="photos/Diego.jpg" alt="Diego Perez Palacin photo">
+        <span>Diego Perez Palacin (Linnaeus University, Sweden)</span>
+      </div>
+    </li>
+
+    <li>
+      <strong>Journal First Chair</strong>
+      <div class="person">
+        <img src="photos/Raphaela.jpg" alt="Raffaela Mirandola photo">
+        <span>Raffaela Mirandola (Politecnico di Milano, Italy)</span>
+      </div>
+    </li>
+
+    <li>
+      <strong>MIP Award Chair</strong>
+      <div class="person">
+        <img src="photos/Brad.jpg" alt="Bradley Schmerl photo">
+        <span>Bradley Schmerl (Carnegie Mellon University, USA)</span>
+      </div>
+    </li>
+
   </ul>
 </section>
 
